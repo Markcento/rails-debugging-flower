@@ -14,15 +14,15 @@
         = form_for @flower do |f|
           .form-group
             = f.label :name
-            = f.text_field :name, class: 'form-control'
+            = f.text_field :name, class: 'form-control', :required => "true"
 
           .form-group
             = f.label :edible
-            = f.check_box :edible, class: 'form-control'
+            = f.check_box :edible, name: 'edible', class: 'form-control'
 
           .form-group
             = f.label :color
-            = f.text_field :color, class: 'form-control'
+            = f.text_field :color, class: 'form-control', :required => "true"
 
           .form-group
             = f.label :family_id

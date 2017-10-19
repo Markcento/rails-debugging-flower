@@ -9,9 +9,10 @@ class FlowersController < ApplicationController
   end
 
   def create
+
     @flower = Flower.create(flower_params)
     @families = Family.all
-    if @flower.valid?
+    if @flower.valid? 
       redirect_to flowers_path
       flash[:notice] = "Flower was successfully created."
     else
@@ -22,6 +23,6 @@ class FlowersController < ApplicationController
 
   private
   def flower_params
-    params.require(:flower).permit([:edible, :family_id])
+    params.require(:flower).permit([:edible, :color, :name, :family_id])
   end
 end
